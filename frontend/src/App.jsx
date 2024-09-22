@@ -20,7 +20,7 @@ const App = () => {
   const messagesEndRef = useRef(null);
   const chatContainerRef = useRef(null);
 
-  const validUsers = ["ziaur", "ayesha"];
+  const validUsers = ["Ziaur", "Ayesha"];
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
