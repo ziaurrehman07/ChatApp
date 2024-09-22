@@ -78,7 +78,7 @@ const ChatBox = () => {
     fetchMessages();
 
     // Set up the socket connection
-    const newSocket = io("http://localhost:8000"); // Make sure to adjust the server URL
+    const newSocket = io("https://chatapp-server-fhbs.onrender.com"); // Make sure to adjust the server URL
     setSocket(newSocket);
 
     // Clean up the socket connection when component unmounts

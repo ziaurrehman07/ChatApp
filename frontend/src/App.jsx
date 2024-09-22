@@ -4,7 +4,7 @@ import { FaPowerOff } from "react-icons/fa";
 import io from "socket.io-client";
 
 // Initialize socket connection
-const socket = io("http://localhost:8000");
+const socket = io("https://chatapp-server-fhbs.onrender.com");
 
 const App = () => {
   const [username, setUsername] = useState(

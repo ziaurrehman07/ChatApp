@@ -10,7 +10,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/auth/register",
+        "https://chatapp-server-fhbs.onrender.com/api/auth/register",
         {
           username,
           email,

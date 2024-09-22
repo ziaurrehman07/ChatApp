@@ -9,7 +9,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/auth/login",
+        "https://chatapp-server-fhbs.onrender.com/api/auth/login",
         {
           email,
           password,

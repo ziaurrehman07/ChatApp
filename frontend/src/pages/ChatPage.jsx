@@ -21,7 +21,7 @@ const ChatBox = ({ userId, receiverId }) => {
 
     fetchMessages();
 
-    const newSocket = io("http://localhost:8000");
+    const newSocket = io("https://chatapp-server-fhbs.onrender.com");
     setSocket(newSocket);
 
     return () => newSocket.close();
