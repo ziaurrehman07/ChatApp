@@ -136,7 +136,7 @@ const App = () => {
           </button>
 
           <div
-            className="overflow-y-scroll h-[80vh] md:h-[60vh] lg:h-[70vh] bg-white shadow-inner p-4 rounded-lg"
+            className="overflow-y-scroll h-full md:h-[60vh] lg:h-[70vh] bg-white shadow-inner p-4 rounded-lg"
             ref={chatContainerRef}
             onScroll={handleScroll}
           >
