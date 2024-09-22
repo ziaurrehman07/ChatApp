@@ -105,10 +105,22 @@ const App = () => {
     localStorage.removeItem("username");
     localStorage.removeItem("chatactive");
   };
+  useEffect(() => {
+    const handleResize = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    };
 
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <div
-      className="w-screen h-screen bg-cover bg-center flex justify-center items-center"
+      className="w-screen h-screen-dynamic bg-cover bg-center flex justify-center items-center"
       style={{ backgroundImage: `url('/path-to-your-illustration.jpg')` }} // Add your own image path
     >
       {chatactive ? (
@@ -124,7 +136,7 @@ const App = () => {
           </button>
 
           <div
-            className="overflow-y-scroll h-[calc(100vh-150px)] md:h-[60vh] lg:h-[70vh] bg-white shadow-inner p-4 rounded-lg"
+            className="overflow-y-scroll h-[80vh] md:h-[60vh] lg:h-[70vh] bg-white shadow-inner p-4 rounded-lg"
             ref={chatContainerRef}
             onScroll={handleScroll}
           >
@@ -188,7 +200,7 @@ const App = () => {
           </form>
         </div>
       ) : (
-        <div className="w-screen h-screen flex justify-center items-center gap-3">
+        <div className="w-screen h-screen-dynamic flex justify-center items-center gap-3">
           <input
             type="text"
             value={username}
